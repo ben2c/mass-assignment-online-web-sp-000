@@ -22,4 +22,9 @@ wrist_size:, glove_size:, pant_length:, pant_width:)
     @pant_width = pant_width
   end
 
+  def initialize (attributes)
+    attributes.each do |key,value|
+      self.send(("#{key}="), value)
+    end
+  end
 end
